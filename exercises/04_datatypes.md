@@ -73,8 +73,6 @@ Resten av talet % 2 är: 1
 
 ## Lösningsförslag
 
-**Observera att detta är enbart lösningsförslag, det finns många sätt att lösa dessa på**
-
 ### Datatyper
 
 1.
@@ -93,8 +91,6 @@ Resten av talet % 2 är: 1
     * Dock om strängen har en siffra INNAN själva strängen börjar så kommer den siffran att användas och göra en beräkning, så det här blir faktiskt 5 * 999 
 * Multiplicera `$lastName` med `$is_human`;
     * Samma här, `"5Jesper"` blir till 5 och `true` blir till 1. Så 5*1 == 5
-
-Relaterat till detta: [**PHP.net ~ Type Juggling**](http://php.net/manual/en/language.types.type-juggling.php)
 
 2.
 ```
