@@ -278,15 +278,6 @@ function make_tag($text, $tag, $style, $href) {
 
 <summary></summary>
 
-//Store the  returned array in `$my_array`
-$my_array = random_number_array_generator();
-//Then loop through each value
-foreach( $my_array as $value ) {
-    echo "<p>Random value is: $value</p>";
-}
-```
-
-
 12.
 ```php
 function make_list($array) {
