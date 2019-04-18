@@ -49,7 +49,7 @@ $is_a_chair = false;     //don't label me!
 * Multiplicera `$is_human` med `$z_index`;
 * Addera `$lastName` med `$age`;
 * Addera `$firstName` med `$z_index`;
-* Multiplicera `$lastName` med `$is_human`;
+* Multiplicera `$firstName` med `$is_human`;
 
 2. **Vilka** av nedanstående alternativ sparar en sträng på rätt sätt och varför? Varför funkar inte de alternativ som inte fungerar?:
 ```
@@ -89,8 +89,8 @@ Resten av talet % 2 är: 1
     * Om dock strängen inte är ett nummer så kommer strängen att ignoreras och enbart det ena värdet kommer att skrivas ut 
 * Addera `$firstName` med `$z_index`
     * Dock om strängen har en siffra INNAN själva strängen börjar så kommer den siffran att användas och göra en beräkning, så det här blir faktiskt 5 * 999 
-* Multiplicera `$lastName` med `$is_human`;
-    * Samma här, `"5Jesper"` blir till 5 och `true` blir till 1. Så 5*1 == 5
+* Multiplicera `$firstName` med `$is_human`;
+    * Samma här, `"5Casper"` blir till 5 och `true` blir till 1. Så 5*1 == 5
 
 2.
 ```

@@ -142,7 +142,7 @@ $sum = 0;
 
 for($i = 0; $i < count($worst_array_yet); $i++){
     //$i is 0,1,2,3,4, this can be used to access the value at these indexes
-    $current_value = $ok_array[$i];
+    $current_value = $worst_array_yet[$i];
     if(is_string($current_value)){
         echo $current_value;
     } else{
