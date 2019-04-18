@@ -78,85 +78,51 @@ $multiply_answer = multiply(5,5);
 echo $multiply_answer;
 ```
 
-5. 
-Eftersom __alla__ gillar katter så ska vi refaktorera vår Mjau Machine 🙀
-
-Du ska skriva en funktion som ska ha samma funktionalitet som vår ursprungliga Mjau Machine från tidigare övningar men nu i form av en funktion.
-
-
-6 . 
-
-Använd while-loopen du skapade från en av de tidigare uppgiftern. Nummer 5 i `03_loops`
-
-Denna loop ska du nu göra om till en funktion som tar 2 parametrar.
-* Första parametern ska vara siffran som loppen ska räkna ner ifrån, alltså hur många värden funktionen ska gå igenom.
-* Andra parametern ska vara om funktionen ska skriva ut jämna eller ojämna värden.
-
 <summary></summary>
 
-7 .
-
-Skriv en funktion som tar 2 parametrar. Parametrarna ska vara två heltal. Funktionen ska multiplicera heltalen utan att använda `*`-operatorn.
-
-
-8 .
+5 .
 Skriv en funktion som tar in en parameter. Parametern ska vara en string. Funktionen ska sedan returnera strängens längd på detta sätt:
 
 ```bash
 "Strängen du matade in är 14 tecken lång"
 ```
 
-9 .
+6 .
 
 Skapa en funktion som heter `convert_string`, funktionen ska ta **två parametrar**. Den första parametern ska vara en sträng som skickas med, typ: _"Goodbye World"_. Den andra parametern som skickas med ska bestämma om strängen ska konverteras till bara stora bokstäver eller bara små bokstäver. Till detta kan man använda hjälpfunktionen: `strtolower($string)` och `strtoupper($string)`
 
-10 . 
+7 . 
 Skapa en funktion som tar en parameter, argumentet som skickas in ska vara en sträng. Funktionen ska sedan returnera det sista tecknet i strängen som skickas in.
 
-11 .
+8 .
 Skriv en funktion med namnet make_paragraph som skriver ut en sträng som HTML-elementet `<p>`. Exempel: _"hej"__ ska skrivas ut som _"`<p>hej</p>`"_. Funktionen ska ha en parameter, som är strängen som ska skrivas ut, och den ska inte returnera något bara `echo`a ut.
 
-12 .
+9 .
 Funktionen `make_paragraph()` är lite begränsad. Tänk om vi vill göra `<h1>`-taggar? Eller `<h2>`, `<h3>` osv. Skriv en ny funktion med namnet make_heading. Funktionen behöver veta strängen som ska skrivas ut och vilken heading det ska vara. Den behöver alltså två parametrar.
 
-13 .
+10 .
 Nu har vi två funktioner som vi kan använda för att skapa HTML-paragrafer och headings. Men det blir väldigt många funktioner om vi ska ha en funktion för varje möjligt HTML-element. Vi behöver en funktion som kan göra flera sorters element. Skriv en funktion make_tag som kan göra alla sorters HTML-element.
 
-14 .
+11 .
 Förbättra `make_tag` så att man kan ange inline styles också. (Eller href för länkar)
 Exempel: `<p style="color: hotpink;">Exempeltext</p>`
 
-15 .
-Skriv en funktion som gör om alla nyrader i en sträng till `<br>`-element. Funktionen ska ta strängen som parameter och returnera en ny sträng. En nyrad i PHP skrivs `'\n'`.
-
-16 .
-Skriv en funktion som returnerar en array med slumpade tal. Använd [`mt_rand()`](http://php.net/manual/en/function.mt-rand.php) för att göra slumptal. Hur många parametrar behöver funktionen?
-
-17 .
+12 .
 Skriv en funktion som gör om en array till en lista i HTML. Använd funktionen make_tag. Exempel: `make_list( [1, 2] )` → `"<ul> <li>1</li> <li>2</li> </ul>"`
 
-18 .
-Skriv en funktion med namnet `capitalize` som gör om ett användarnamn till stora bokstäver.
-
-19 .
-Förbättra funktionen så att den bara gör första bokstaven stor. Tips är att använda `substr()`
-
-20 .
+13 .
 Skriv en funktion som genererar en random färg.
 
-21.
+14.
 Skriv en funktion som avrundar en float till närmaste heltal med hjälp av typecast.
 ```
 Exempel: round(3.9) → 3, round(5.5) → 6.
 ```
 
-22 .
-Skriv en funktion som gör om ett decimaltal till en sträng. Strängen ska använda decimalkomma i stället för decimalpunkt. Exempel: float_to_string(75.5) → "75,5".
-
-23 .
+15 .
 Skriv en funktion som räknar ut summan av alla tal i en array. Skriv en annan som räknar ut medelvärdet.
 
-24 .
+16 .
 Skriv en funktion som tar en sträng som motsvarar en veckodag som parameter och returnerar en siffra. Om strängen är "måndag" ska funktionen returnera 1, "tisdag" ska bli 2 och "söndag" ska bli 7.
 Funktionen ska fungera oavsett om veckodagen står med små eller stora bokstäver.
 
@@ -229,60 +195,7 @@ echo $answer
 
 <summary></summary>
 
-5. 
-```php
-function mjau_machine($number_of_mjau){ 
-    if($number_of_mjau == 0){
-        return '😾';
-    } else {
-        $all_the_mjaus = '';
-        for($i = 0; $i <= $number_of_mjau; $i++){
-            $all_the_mjaus = $all_the_mjaus . 'mjau ';
-     }
-    return $all_the_mjaus;
-    }
-}
-
-echo $mjau_machine(10);
-```
-
-6.
-```php
-function even_or_odd($number, $is_even){
-    $numbers = '';
-    while($number < 10){
-        //If it's a even number, we wont get rest value, we will have 0
-        if( $number % 2 == $is_even){
-            $numbers = $numbers . $number;
-        }
-        $number++;
-    }
-    return $numbers;
-}
-
-even_or_odd(10, 0)
-```
-
-7.
-```php
-function calcy($x,$y){
-    $sum = 0;
-    /* x * y är samma sak som att addera x, y antal gånger. Vi kör alltså loopen
-    i det här fallet y antal gånger, alltså 4 i vårat fall.
-    Värdet som läggs till i sum är 5 i detta fall, alltså:
-    5 + 5 + 5 + 5 */
-    for ($i = 0; $i <= $y ; $i++){
-        $sum = $sum + $x;
-    }
-    return $sum;
-}
-
-$calcyAnswer = calcy(5,4);
-echo $calcyAnswer;
-
-```
-
-8.
+5.
 ```php
 function string_checker($string_to_check){
     //Use the built in function `strlen`
@@ -295,7 +208,7 @@ echo string_checker('Huburru Hubburru');
 
 ```
 
-9.
+6.
 ```php
 function string_converter($string_to_convert, $up_or_down){
     if($up_or_down == 1){
@@ -310,7 +223,7 @@ echo string_converter("Hello", 1);
 
 <summary></summary>
 
-10.
+7.
 ```php
 function string_checker($string_to_check){
     //Use substring, which extract a part of a string,
@@ -322,7 +235,7 @@ echo string_checker("Hubburu"); //u
 ```
 
 
-11, 12, 13
+8, 9, 10
 ```php
 function make_paragraph($hej) {
     echo "<p> $hej </p>";
@@ -340,7 +253,7 @@ function make_tag($text, $tag) {
 }
 ```
 
-14. 
+11. 
 ```php
 function make_tag($text, $tag, $style, $href) {
     //if values are empty, return tag as is 
@@ -363,38 +276,7 @@ function make_tag($text, $tag, $style, $href) {
 }
 ```
 
-15. 
-```php
-function replace_linebreaks($string) {
-    /* str_replace, built in function to replace every occurence of a character */
-    $resultat = str_replace("\n", '<br />', $string);
-    return $resultat;
-}
-//Use case
-$proper_linebreaks = replace_linebreaks("en\nsträng\nmed\nmassa\nradbrytningar");
-echo $proper_linebreaks;
-```
-
 <summary></summary>
-
-16.
-```php
-function random_number_array_generator() {
-    //array to store the values
-    $array = [];
-    //create 5 random numbers
-    for ($i=0; $i < 5; $i++) {
-        /*
-         * `mt_rand`, built in function that returns number between
-         * a range, in this case: 1 to 100
-         */
-        $random = mt_rand(1, 100);
-        //push each value to the array, add it at the end
-        array_push($array, $random);
-    }
-    //When the array is created, when the loop is finished. Return it.
-    return $array;
-}
 
 //Store the  returned array in `$my_array`
 $my_array = random_number_array_generator();
@@ -405,7 +287,7 @@ foreach( $my_array as $value ) {
 ```
 
 
-17.
+12.
 ```php
 function make_list($array) {
     //Open up a `<ul>`-element
@@ -427,28 +309,9 @@ $html_lista = make_list($my_array);
 echo $html_lista;
 ```
 
-
-18, 19.
-```php
-function capitalize($text) {
-        // "david" ska bli "David"
-        // plocka ut första bokstaven
-        // och gör den stor
-        // lägg ihop med resten av strängen
-        // returnera
-        $first = substr($text, 0, 1);
-        $first = strtoupper($first);
-        $rest = substr($text, 1);
-        return $first . $rest;
-    }
-//Use case
-$text = capitalize($text);
-echo "<p>$text</p>";
-```
-
 <summary></summary>
 
-20.
+13.
 ```php
 function random_color(){
     //A color is a combination of red, green and blue values
@@ -459,7 +322,7 @@ function random_color(){
 }
 ```
 
-21 .
+14 .
 ```php
 function my_round($x) {
     //(int) casts variable to int if not int, will convert float to int
@@ -467,16 +330,7 @@ function my_round($x) {
 }
 ```
 
-22 .
-```php
-function float_to_string($float) {
-    //converts our float to a string so we can replace certain
-    //values in the string, for example switch . to ,
-    return str_replace(".", ",", (string)$float);
-}
-```
-
-23.
+15.
 ```php
 function sum($array) {
     $sum_of_array = 0;
@@ -487,7 +341,7 @@ function sum($array) {
 }
 ```
 
-24.
+16.
 ```php
 function weekday_to_number($weekday) {
     /*
