@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Single Page Application</title>
+  <style>
+    .hidden {
+      display: none;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <form id="loginform" method="POST">
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" />
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" />
+    <input type="submit" value="Submit" />
+    <p id="errorfield" class="error hidden">Wrong username or password</p>
+  </form>
+
+  <div id="dashboard" class="hidden">
+    <h1>Welcome</h1>
+    <button id="getmessages">Get messages</button>
+    <ul id="messagelist"></ul>
+  </div>
+
+  <script type="application/javascript">
+    const loginForm = document.getElementById('loginform');
+    const errorField = document.getElementById('errorfield');
+    const dashboard = document.getElementById('dashboard');
+    const getmessagesBtn = document.getElementById('getmessages');
+    const messageList = document.getElementById('messagelist');
+
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(loginForm);
+      fetch('api.php', {
+        method: 'POST',
+        body: formData
+      })
+        .then(response => {
+          if (!response.ok) {
+            throw Error(response.statusText);
+          }
+          
+          return response.json();
+        })
+        .then(data => {
+          loginForm.classList.add('hidden');
+          dashboard.classList.remove('hidden');
+        })
+        .catch(err => {
+          errorField.classList.remove('hidden');
+        });
+    });
+
+    getmessagesBtn.addEventListener('click', () => {
+      fetch('api.php?messages')
+        .then(response => response.json())
+        .then(data => {
+          data.messages.forEach(message => {
+            const li = document.createElement('li');
+            li.textContent = message;
+            messageList.appendChild(li);
+          });
+        });
+    });
+  </script>
+</body>
+</html>
