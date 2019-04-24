@@ -4,12 +4,6 @@
     public $title;
     public $genre;
     public $isBorrowed = false;
-
-    public function borrow() {
-      if(!$this->isBorrowed) {
-        $this->isBorrowed = true;
-      }
-    }
   }
 
   class BookModel extends BaseLibraryModel
