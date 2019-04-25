@@ -1,110 +1,4 @@
-# SQL + PDO
-
-## Databasuppkoppling
-
-Instruktioner för att kontakta databasen via PHP. Det mesta vi kommer att göra gällande CRUD.
-
-* [PHP.net: PDO construct](http://php.net/manual/en/pdo.construct.php)
-* [PHP.net: PDO prepare](http://php.net/manual/en/pdo.prepare.php)
-* [PHP.net: Superglobals](http://php.net/manual/en/language.variables.superglobals.php)
-* [W3Schools - Prepared Statements](https://www.w3schools.com/php/php_mysql_prepared_statements.asp)
-
-### Skapa en `PDO` - uppkoppling till databasen
-
-```php
-/* Always check your own details for connecting
- * 'dbname' is the database, 'localhost' is MySQL in MAMP
- * 'charset' is to get the right encoding, åäö etc. Sometimes
- * you may have to supply the port as well: localhost: 8889 for example
- * */
-$pdo = new PDO(
-    "mysql:host=localhost;dbname=animals;charset=utf8",
-    "root", //user
-    "root"  //password
-);
-```
-
-### Fetch Associative Array
-
-```php
-//Prepare a SQL-statement
-$statement = $pdo->prepare("SELECT * FROM animals");
-//Execute it
-$statement->execute();
-//And fetch every row that it returns. $animals is now an associative array
-$animals = $statement->fetchAll(PDO::FETCH_ASSOC);
-```
-
-### Fetch ONE row
-
-```php
-//Prepare a SQL-statement
-$statement = $pdo->prepare("SELECT * FROM user WHERE id = 5");
-//Execute it
-$statement->execute();
-//If we only expect one user or one row, use `fetch()`
-$user = $statement->fetch();
-```
-
-##### Post with parameters
-
-```php
-//:name is a placeholder for the value that we collect from the $_POST parameter
-$statement = $pdo->prepare("SELECT * FROM animals WHERE name = :name");
-// Always pass the values in execute.
-$statement->execute(array(
-    ":name"     => $_POST["name"],
-));
-$animals = $statement->fetchAll(PDO::FETCH_ASSOC);
-```
-
-## Delete from database
-
-```php
-//:name is a placeholder for the value that we collect from the $_POST parameter
-$statement = $pdo->prepare("DELETE FROM celebrities WHERE id = :id");
-$statement->execute(array(
-    ":id"     => $_POST["id"],
-));
-//No need to fetch when doing delete as we are not collecting information
-//we are just sending information to the database
-```
-
-## Insert into database
-
-```php
-/* The first parantheses are the columns you want to insert into. The second
- * parantheses are the placeholders for the values you want to insert. So the
- * statement isn't populated until the 'execute'-function runs. We don't need
- * to supply ID because that is created automatically.
- */
-$statement = $pdo->prepare(
-    "INSERT INTO celebrities (name, born, country) 
-    VALUES (:name, :born, :country)"
-);
-/* 
- * In the execute statement you insert the actual values from your form submit. 
- * The argument to 'execute()' is an associative array. The keys are the 
- * placeholders from the prepared statement and the values are the ones from
- * the form
- */
-$statement->execute(array(
-    ":name"     => $_POST["name"],
-    ":born"     => $_POST["born"],
-    ":country"  => $_POST["country"]
-));
-
-// No need to fetch, if we where to fetch on this statement we would 
-// only recieve true or false depending if we sucessfully inserted the values
-```
-
-### Pretty print
-
-Använd för att få en snygg output på era arrayer. Ersätt `$your_variable` med namnet på den variabeln ni hämtar, bra att använda när vi hämtar data via databaser.
-
-```php
-highlight_string("<?php =\n" . var_export($your_variable, true) . ";\n?>");
-```
+# SQL 
 
 ## Instruktioner för skapandet av tabeller
 
@@ -246,7 +140,7 @@ SELECT * FROM animals ORDER BY color ASC, born DESC
 8.
 
 ```sql
-SELECT 'Namn: ' + animal as Name FROM animals
+SELECT CONCAT("Name: ", animal) as Name FROM animals
 ```
 
 9.
