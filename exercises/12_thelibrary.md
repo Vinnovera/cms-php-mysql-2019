@@ -16,7 +16,7 @@ Skicka också in dina titlar när du kör `BookView::render` i `router.php`, t.e
 
 4. Biblioteket lånar inte bara ut böcker, det går att låna CD också. Lägg till en ny modell (t.ex. `CDModel`), en ny vy (t.ex. `CDView`) och en ny länk i navigeringen för att visa CD-skivor (t.ex. `page=cd`). CD-skivorna har lite andra egenskaper än böckerna. Istället för `$author` och `$pageCount` så ska CD-skivorna ha `$artist` och `$length`.
 
-5. Det vore praktiskt att se om böckerna och skivorna redan är utlånade eller inte. Lägg till en `$isBorrowed`-egenskap i `BaseLibraryModel`, och lägg även till att du kan sätta `$isBorrowed` i konstruktorn för `BookModel` och `CDModel`. Fixa också så att du kan se om boken är lånad eller inte i tabellen. 
+5. Extra uppgift: Det vore praktiskt att se om böckerna och skivorna redan är utlånade eller inte. Lägg till en `$isBorrowed`-egenskap i `BaseLibraryModel`, och lägg även till att du kan sätta `$isBorrowed` i konstruktorn för `BookModel` och `CDModel`. Fixa också så att du kan se om boken är lånad eller inte i tabellen. 
 Du kan t.ex. använda ikoner från Spectre för att göra detta. [Spectre Icons](https://picturepan2.github.io/spectre/elements/icons.html): `<i class="icon icon-check"></i>`
 
 6. Extra uppgift: Lägg även till så att biblioteket kan låna ut filmer. Istället för `$author` eller `$artist` ska det finnas två nya fält: `$director` och `$actors`. `$actors` ska vara en array med flera olika skådespelare. 
