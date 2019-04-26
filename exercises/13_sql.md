@@ -214,7 +214,7 @@ SELECT * FROM city WHERE id=200;
 
 9.
 ```sql
-SELECT CountryCode FROM city WHERE Name = "Stockholm" OR Name ="Oslo" Or Name = "Reykjavík" OR Name = "København"
+SELECT CountryCode FROM city WHERE Name = "Stockholm" OR Name ="Oslo" Or Name = "Reykjavík" OR Name = "København" OR Name = "Helsinki [Helsingfors]"
 ```
 
 10.
