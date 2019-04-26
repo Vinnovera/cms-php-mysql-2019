@@ -223,15 +223,15 @@ SELECT CountryCode FROM city WHERE Name = "Stockholm" OR Name ="Oslo" Or Name = 
 
 10.
 ```sql
-SELECT COUNT(Name) FROM city WHERE (CountryCode = "SWE" OR CountryCode = "NOR" Or CountryCode = "DAN")
+SELECT COUNT(Name) FROM city WHERE (CountryCode = "SWE" OR CountryCode = "NOR" Or CountryCode = "DNK")
 ```
 
 11.
 ```sql
-SELECT COUNT(Name) FROM city WHERE (CountryCode = "SWE" OR CountryCode = "NOR"Or CountryCode = "DAN") AND population > 500000;
+SELECT COUNT(Name) FROM city WHERE (CountryCode = "SWE" OR CountryCode = "NOR" Or CountryCode = "DNK") AND population > 500000;
 ```
 
 12.
 ```sql
-SELECT COUNT(Name) FROM city WHERE (CountryCode = "SWE" OR CountryCode = "NOR")AND population > 200000 AND population < 500000;
+SELECT COUNT(Name) FROM city WHERE (CountryCode = "SWE" OR CountryCode = "NOR" Or CountryCode = "DNK")AND population > 200000 AND population < 500000;
 ```
