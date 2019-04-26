@@ -97,6 +97,21 @@ Du ska använda tabellen `city`. Det kommer att finnas flera tabeller i schemat 
 
 8. Vilken stad har `id=200`?
 
+I följande uppgifter är det bra att känna till keyworden `OR` samt `AND`. Dessa används ihop med `WHERE` för att kunna kontrollera flera olika saker samtidigt. Det går också att använda paranteser för att kombinera `OR` och `AND`. 
+
+```sql
+SELECT * FROM animals WHERE animal = 'cat' OR animal = 'elephant';
+```
+
+```sql
+SELECT * FROM animals WHERE animal = 'cat' AND color = 'black';
+```
+
+```sql
+SELECT * FROM animals WHERE (animal = 'cat' OR animal = 'elephant') AND color = 'grey';
+```
+
+
 9. Vad har följande länder för landskoder i databasen? Sverige, Norge, Danmark, Finland, Island. (tips: Kan du någon stad i Sverige, Norge m.m.? Flera lösningar är möjliga.)
 
 10. Hur många städer finns det i Norden?
