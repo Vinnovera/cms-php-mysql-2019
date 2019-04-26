@@ -217,6 +217,10 @@ SELECT * FROM city WHERE id=200;
 SELECT CountryCode FROM city WHERE Name = "Stockholm" OR Name ="Oslo" Or Name = "Reykjavík" OR Name = "København" OR Name = "Helsinki [Helsingfors]"
 ```
 
+```sql
+SELECT CountryCode FROM city WHERE Name = "Stockholm" OR Name ="Oslo" Or Name = "Reykjavík" OR Name = "København" OR Name LIKE "%Helsinki%";
+```
+
 10.
 ```sql
 SELECT COUNT(Name) FROM city WHERE (CountryCode = "SWE" OR CountryCode = "NOR" Or CountryCode = "DAN")
