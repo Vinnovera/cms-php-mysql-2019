@@ -4,7 +4,7 @@
 
 Vi ska utgå från samma produktdatabas som i den tidigare uppgiften, så om du inte har importerat [products.sql](https://raw.githubusercontent.com/Vinnovera/cms-php-mysql-2019/master/exercises/products.sql) gör det nu. Förslagsvis gör du din connection till MySQL i en fil som heter `connect.php` som du återanvänder. 
 
-Om du kör fast eller vill ha inspiration, titta gärna på exempellösningarna i: 
+Om du kör fast eller vill ha inspiration, titta gärna på exempellösningarna i: [Examples](https://github.com/Vinnovera/cms-php-mysql-2019/tree/master/examples/pdo)
 
 1. Skapa en PHP-sida (`listproducts.php`) där du listar alla laptops och PC-datorer i databasen i en tabell. Du ska lista `model`, `speed`, `ram` och `price`. Skriv även ut vem som är tillverkare (`maker`) och vilken typ av produkt det är (`type`). Alla produkter ska vara i samma tabell och hämtas i samma SQL query.
 
