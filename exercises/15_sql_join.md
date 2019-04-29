@@ -2,7 +2,7 @@
 
 ## Övningar
 
-Börja med att ladda hem och sedan importera products.sql till din database TheStore. Detta gör du genom att gå till din databas och välja Import sedan välja filen products.sql. När du är klar trycker du på Go. Samma som i tidigare övning med städerna.
+Börja med att ladda hem och sedan importera [products.sql](https://raw.githubusercontent.com/Vinnovera/cms-php-mysql-2019/master/exercises/products.sql) till din database TheStore. Detta gör du genom att gå till din databas och välja Import sedan välja filen products.sql. När du är klar trycker du på Go. Samma som i tidigare övning med städerna.
 
 1. Hur mycket kostar tillverkare "A":s PC-datorer? Kombinera Product och PC med en INNER JOIN för att slå ihop tabellerna, och visa modelnumret och priset. 
 
