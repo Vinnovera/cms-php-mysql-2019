@@ -21,9 +21,10 @@ Börja med att ladda hem och sedan importera [products.sql](https://raw.githubus
 
 1.
 ```sql
-SELECT pc.model AS model, pc.price as Price FROM pc
-INNER JOIN product as p
-ON pc.model = p.model AND p.maker = "A";
+SELECT pc.model, pc.price FROM 
+pc INNER JOIN product
+ON pc.model = product.model 
+WHERE product.maker = "A";
 ```
 
 2. 
@@ -42,10 +43,10 @@ ON printer.model = product.model AND printer.type = "laser";
 
 4. 
 ```sql
-SELECT DISTINCT p.maker FROM product p
-JOIN laptop l
-ON l.model = p.model
-WHERE (l.ram = 64 OR l.ram = 96) AND p.type = "laptop";
+SELECT DISTINCT product.maker FROM product
+JOIN laptop
+ON laptop.model = product.model
+WHERE (laptop.ram = 64 OR laptop.ram = 96) AND product.type = "laptop";
 ```
 
 5. 
