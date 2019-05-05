@@ -15,17 +15,17 @@
 4. Gå till `http://localhost:8888/<mappnamn>`. Här kan du starta Wordpress "5 minute installation".
 
 5. Fyll i dina databasuppgifter. Om du har en vanlig MAMP-installation borde det vara följande:
- * <databasnamn>
- * root
- * root
- * localhost:8889
- * wp_
+ * `<databasnamn>`
+ * `root`
+ * `root`
+ * `localhost:8889`
+ * `wp_`
 
 6. Fyll i information för att namnge din Wordpress-sajt, t.ex:
- * <sajtnamn>
- * <användarnamn>
- * <lösenord>
- * <mailadress>
+ * `<sajtnamn>`
+ * `<användarnamn>`
+ * `<lösenord>`
+ * `<mailadress>`
 
 7. Gå till `http://localhost:8888/<mappnamn>/wp-admin` och logga in för att komma till Wordpress administrationsvy. 
 
