@@ -9,7 +9,7 @@ Wordpress är det ledande CMSet (med stor marginal) och vi kommer därför att f
 
 ## Krav för G
 
-* Du ska ha skapat ett eget **Child theme** utifrån ett redan existerande default tema i Wordpress. Du får alltså inte ladda ner något nytt tema utan du får bara utöka ett av de redan existerande teman som följer med vid installation. 
+* Du ska ha skapat ett eget **Child theme** utifrån ett redan existerande tema i Wordpress. 
 * Du skapar minst **3** olika **Custom Templates** som du använder på din sida. Dessa templates ska ha en tydlig funktion och ändra utseendet på en eller flera sidor. Ett exempel kan t.ex. vara att göra en template för din startsida, för din kontaktsida, en sida som visar upp en viss kategori eller som visar upp en viss tagg.
 * Din Wordpress-sida innehåller minst en egen **Custom Post Type** och en **Page** eller ett **Archive** som listar alla dina poster som är av din **Custom Post Type**. 
 
