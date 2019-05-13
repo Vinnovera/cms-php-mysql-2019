@@ -15,12 +15,12 @@
 
 Hämta med `GET`: besök dina URLer via webbläsaren.
 Alla routes ska svara med JSON.
-    * Skapa en `GET` route som hämtar alla användare (tänk på att INTE visa password-fältet)
-    * Skapa en `GET` route som hämtar en enskild användare (tänk på att INTE visa password-fältet )
-    * Skapa en `GET` route som hämtar alla inlägg
-    * Skapa en `GET` route som hämtar de X senaste inläggen
-    * Skapa en `GET` route som hämtar de X första inläggen
-    * Skapa en `GET` route som hämtar alla inlägg som är skrivna av en specifik användare
-    * Skapa en `GET` route som hämtar de X senaste inläggen som är skrivna av en specifik användare
-    * Skapa en `GET` route som hämtar de X senaste inläggen som är skrivna av en specifik användare
-    * Skapa en `GET` route som hämtar de X första inläggen som är skrivna av en specifik användare
+* Skapa en `GET` route som hämtar alla användare (tänk på att INTE visa password-fältet)
+* Skapa en `GET` route som hämtar en enskild användare (tänk på att INTE visa password-fältet )
+* Skapa en `GET` route som hämtar alla inlägg
+* Skapa en `GET` route som hämtar de X senaste inläggen
+* Skapa en `GET` route som hämtar de X första inläggen
+* Skapa en `GET` route som hämtar alla inlägg som är skrivna av en specifik användare
+* Skapa en `GET` route som hämtar de X senaste inläggen som är skrivna av en specifik användare
+* Skapa en `GET` route som hämtar de X senaste inläggen som är skrivna av en specifik användare
+* Skapa en `GET` route som hämtar de X första inläggen som är skrivna av en specifik användare
