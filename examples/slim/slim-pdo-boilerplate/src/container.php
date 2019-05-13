@@ -1,8 +1,6 @@
 <?php
 
-use Slim\App;
-
-return function (App $app) {
+return function ($app) {
     $container = $app->getContainer();
 
     // database
