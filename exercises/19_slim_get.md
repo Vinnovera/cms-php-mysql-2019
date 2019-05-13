@@ -14,6 +14,7 @@
 >**Koppla upp dig mot databasen `journal` som du har skapat till den individuella uppgiften**. Det går även bra att använda en kopia av denna databas eller skapa en helt ny databas, huvudsaken är att du har något innehåll att arbeta med. 
 
 Hämta med `GET`: besök dina URLer via webbläsaren.
+Alla routes ska svara med JSON.
     * Skapa en `GET` route som hämtar alla användare (tänk på att INTE visa password-fältet)
     * Skapa en `GET` route som hämtar en enskild användare (tänk på att INTE visa password-fältet )
     * Skapa en `GET` route som hämtar alla inlägg
