@@ -27,6 +27,8 @@ $app->get('/entries/last/{num}', function($req, $resp, $args){
 ```
 [Läs mer här](https://stackoverflow.com/questions/10617894/setting-pdo-mysql-limit-with-named-placeholders)
 
+OBS! Det går INTE att blanda `bindParam()` och att skicka in dina variabler i `execute()`. Om du ska använda t.ex. `LIMIT` och därmed `bindParam()`, skicka ALLA variabler med `bindParam()` och skicka inte med något i `execute()`.
+
 Hämta med `GET`: besök dina URLer via webbläsaren.
 Alla routes ska svara med JSON.
 * Skapa en `GET` route som hämtar alla användare (tänk på att INTE visa password-fältet)
