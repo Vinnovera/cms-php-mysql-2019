@@ -9,7 +9,7 @@
 
 * Följ instruktionerna i repot: **[slim-pdo-boilerplate](https://github.com/Vinnovera/cms-php-mysql-2019/tree/master/examples/slim/slim-pdo-boilerplate)**
 
-## Övningar
+## Övningar - Instruktioner
 
 >**Koppla upp dig mot databasen `journal` som du har skapat till den individuella uppgiften**. Det går även bra att använda en kopia av denna databas eller skapa en helt ny databas, huvudsaken är att du har något innehåll att arbeta med. 
 
@@ -35,6 +35,8 @@ OBS! Det går INTE att skicka in keywords som ASC eller DESC som med varken `exe
 $orderby = 'ASC';
 $statement = $this->db->prepare("SELECT * FROM entries ORDER BY createdDate {$orderby} LIMIT :num");
 ```
+
+## Övningar
 
 Hämta med `GET`: besök dina URLer via webbläsaren.
 Alla routes ska svara med JSON.
