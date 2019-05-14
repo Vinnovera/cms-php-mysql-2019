@@ -29,6 +29,13 @@ $app->get('/entries/last/{num}', function($req, $resp, $args){
 
 OBS! Det går INTE att blanda `bindParam()` och att skicka in dina variabler i `execute()`. Om du ska använda t.ex. `LIMIT` och därmed `bindParam()`, skicka ALLA variabler med `bindParam()` och skicka inte med något i `execute()`.
 
+OBS! Det går INTE att skicka in keywords som ASC eller DESC som med varken `execute()` eller `bindParam()`. Du måste skicka in en sådan variabel som vanligt i strängen:
+
+```php
+$orderby = 'ASC';
+$statement = $this->db->prepare("SELECT * FROM entries ORDER BY createdDate {$orderby} LIMIT :num");
+```
+
 Hämta med `GET`: besök dina URLer via webbläsaren.
 Alla routes ska svara med JSON.
 * Skapa en `GET` route som hämtar alla användare (tänk på att INTE visa password-fältet)
