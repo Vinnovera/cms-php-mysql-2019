@@ -14,8 +14,14 @@
   $dependencies($app);
 
   // Register routes
-  $routes = require __DIR__ . '/../src/routes.php';
-  $routes($app);
+  $login = require __DIR__ . '/../src/routes/login.php';
+  $login($app);
+
+  $view = require __DIR__ . '/../src/routes/view.php';
+  $view($app);
+
+  $user = require __DIR__ . '/../src/routes/user.php';
+  $user($app);
 
   // Run app
   $app->run();

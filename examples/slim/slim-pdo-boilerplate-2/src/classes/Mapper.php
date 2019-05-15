@@ -1,8 +1,8 @@
 <?php
 
 abstract class Mapper {
-    protected $db;
+  protected $db;
     public function __construct($db) {
-        $this->db = $db;
-    }
+    $this->db = $db;
+  }
 }
